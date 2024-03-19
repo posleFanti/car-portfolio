@@ -27,7 +27,7 @@ public class WheelController : MonoBehaviour
         currentTurnAngle = maxTurnAngle * Input.GetAxis("Horizontal");
         for (int i = 0; i < 2; i++)
         {
-            wheelColliders[i].motorTorque = currentAcceleration;
+            wheelColliders[3-i].motorTorque = currentAcceleration;
             wheelColliders[i].steerAngle = currentTurnAngle;
         }
         for (int i = 0; i < wheelColliders.Length; i++)
