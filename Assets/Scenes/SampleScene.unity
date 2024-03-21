@@ -175,16 +175,16 @@ WheelCollider:
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.5
-    m_ExtremumValue: 1.5
-    m_AsymptoteSlip: 0.8
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 4
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 4
   m_SidewaysFriction:
     m_ExtremumSlip: 0.8
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -246,16 +246,16 @@ WheelCollider:
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.5
-    m_ExtremumValue: 1.5
-    m_AsymptoteSlip: 0.8
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 4
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 4
   m_SidewaysFriction:
     m_ExtremumSlip: 0.8
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -327,16 +327,16 @@ WheelCollider:
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.5
-    m_ExtremumValue: 1.5
-    m_AsymptoteSlip: 0.8
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 4
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 4
   m_SidewaysFriction:
     m_ExtremumSlip: 0.8
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -472,12 +472,12 @@ MonoBehaviour:
   - {fileID: 1171513992}
   - {fileID: 421670032}
   - {fileID: 327551512}
-  acceleration: 800
-  braking: 500
+  acceleration: 500
+  braking: 1
   currentAcceleration: 0
   currentBrakeForce: 0
   currentTurnAngle: 0
-  maxTurnAngle: 30
+  maxTurnAngle: 45
 --- !u!54 &934781737
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -616,7 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 934781738}
-  smoothTime: 1
+  smoothTime: 0.5
 --- !u!4 &1171513992 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4315141559277188, guid: a155c7e77d6aab1498efd5819f75f6f6, type: 3}
@@ -674,16 +674,16 @@ WheelCollider:
   m_WheelDampingRate: 0.25
   m_ForwardFriction:
     m_ExtremumSlip: 0.5
-    m_ExtremumValue: 1.5
-    m_AsymptoteSlip: 0.8
+    m_ExtremumValue: 1
+    m_AsymptoteSlip: 4
     m_AsymptoteValue: 0.5
-    m_Stiffness: 1
+    m_Stiffness: 4
   m_SidewaysFriction:
     m_ExtremumSlip: 0.8
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 1
+    m_Stiffness: 2
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

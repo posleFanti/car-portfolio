@@ -22,17 +22,22 @@ public class WheelController : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.R))
             ResetPosition();
+
         currentAcceleration = acceleration * Input.GetAxis("Vertical");
         currentBrakeForce = Input.GetKey(KeyCode.Space) ? braking : 0f;
         currentTurnAngle = maxTurnAngle * Input.GetAxis("Horizontal");
+        
+        // applying acceleration, braking and steering
         for (int i = 0; i < 2; i++)
         {
             wheelColliders[3-i].motorTorque = currentAcceleration;
             wheelColliders[i].steerAngle = currentTurnAngle;
+            wheelColliders[3-i].brakeTorque = currentBrakeForce;
         }
+        
+        // updating wheel meshes
         for (int i = 0; i < wheelColliders.Length; i++)
         {
-            wheelColliders[i].brakeTorque = currentBrakeForce;
             UpdateWheelMeshes(wheelColliders[i], wheels[i]);
         }
     }
