@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 63841243}
   - component: {fileID: 63841244}
+  - component: {fileID: 63841245}
   m_Layer: 0
   m_Name: RL
   m_TagString: Untagged
@@ -178,13 +179,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 4
     m_AsymptoteValue: 0.5
-    m_Stiffness: 4
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.8
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 4
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -194,6 +195,22 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!114 &63841245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63841242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee07319f0e1d2437c9b19d349295c298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelTransform: {fileID: 327551512}
+  steerable: 0
+  motorized: 1
+  wheelCollider: {fileID: 0}
 --- !u!1 &184557944
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,6 +221,7 @@ GameObject:
   m_Component:
   - component: {fileID: 184557945}
   - component: {fileID: 184557946}
+  - component: {fileID: 184557947}
   m_Layer: 0
   m_Name: FR
   m_TagString: Untagged
@@ -249,7 +267,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 4
     m_AsymptoteValue: 0.5
-    m_Stiffness: 4
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.8
     m_ExtremumValue: 1
@@ -265,6 +283,22 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!114 &184557947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184557944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee07319f0e1d2437c9b19d349295c298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelTransform: {fileID: 755823209}
+  steerable: 1
+  motorized: 0
+  wheelCollider: {fileID: 0}
 --- !u!4 &327551512 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4610563156881798, guid: a155c7e77d6aab1498efd5819f75f6f6, type: 3}
@@ -285,6 +319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 678773950}
   - component: {fileID: 678773951}
+  - component: {fileID: 678773952}
   m_Layer: 0
   m_Name: FL
   m_TagString: Untagged
@@ -330,7 +365,7 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 4
     m_AsymptoteValue: 0.5
-    m_Stiffness: 4
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.8
     m_ExtremumValue: 1
@@ -346,6 +381,22 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!114 &678773952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678773949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee07319f0e1d2437c9b19d349295c298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelTransform: {fileID: 1171513992}
+  steerable: 1
+  motorized: 0
+  wheelCollider: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,34 +501,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1966935116601304, guid: a155c7e77d6aab1498efd5819f75f6f6, type: 3}
   m_PrefabInstance: {fileID: 1698112345}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &934781736
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934781735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 577c83c7b52a4c34d8aec8dba3987505, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wheelColliders:
-  - {fileID: 184557946}
-  - {fileID: 678773951}
-  - {fileID: 1507014079}
-  - {fileID: 63841244}
-  wheels:
-  - {fileID: 755823209}
-  - {fileID: 1171513992}
-  - {fileID: 421670032}
-  - {fileID: 327551512}
-  acceleration: 500
-  braking: 1
-  currentAcceleration: 0
-  currentBrakeForce: 0
-  currentTurnAngle: 0
-  maxTurnAngle: 45
 --- !u!54 &934781737
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -510,6 +533,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4273133312015588, guid: a155c7e77d6aab1498efd5819f75f6f6, type: 3}
   m_PrefabInstance: {fileID: 1698112345}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &934781739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934781735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c694d6753553d406185f10e0244ee430, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  motorTorque: 500
+  brakeTorque: 500
+  maxSpeed: 20
+  maxTurnAngle: 45
+  maxTurnAngleOnHighSpeed: 15
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +672,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1507014078}
   - component: {fileID: 1507014079}
+  - component: {fileID: 1507014080}
   m_Layer: 0
   m_Name: RR
   m_TagString: Untagged
@@ -677,13 +718,13 @@ WheelCollider:
     m_ExtremumValue: 1
     m_AsymptoteSlip: 4
     m_AsymptoteValue: 0.5
-    m_Stiffness: 4
+    m_Stiffness: 1
   m_SidewaysFriction:
     m_ExtremumSlip: 0.8
     m_ExtremumValue: 1
     m_AsymptoteSlip: 0.5
     m_AsymptoteValue: 0.75
-    m_Stiffness: 2
+    m_Stiffness: 4
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -693,6 +734,22 @@ WheelCollider:
   m_LayerOverridePriority: 0
   m_Enabled: 1
   m_ProvidesContacts: 0
+--- !u!114 &1507014080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507014077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee07319f0e1d2437c9b19d349295c298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelTransform: {fileID: 421670032}
+  steerable: 0
+  motorized: 1
+  wheelCollider: {fileID: 0}
 --- !u!1 &1562082409
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,7 +930,7 @@ PrefabInstance:
       addedObject: {fileID: 934781737}
     - targetCorrespondingSourceObject: {fileID: 1966935116601304, guid: a155c7e77d6aab1498efd5819f75f6f6, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 934781736}
+      addedObject: {fileID: 934781739}
     - targetCorrespondingSourceObject: {fileID: 1963737870001238, guid: a155c7e77d6aab1498efd5819f75f6f6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1758196439}
