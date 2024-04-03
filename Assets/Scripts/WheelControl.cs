@@ -5,6 +5,7 @@ public class WheelControl : MonoBehaviour
     [SerializeField] private Transform wheelTransform;
     public bool steerable;
     public bool motorized;
+    public bool hasParkingBrake;
     [HideInInspector] public WheelCollider wheelCollider;
     
     private void Start()

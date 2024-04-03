@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class CarController : MonoBehaviour
@@ -20,6 +21,7 @@ public class CarController : MonoBehaviour
     {
         float hInput = Input.GetAxis("Horizontal");
         float vInput = Input.GetAxis("Vertical");
+        bool isSpaceDown = Input.GetKey(KeyCode.Space);
 
         float forwardSpeed = Vector3.Dot(transform.forward, _rb.velocity);
         float speedFactor = Mathf.InverseLerp(0, maxSpeed, forwardSpeed);
@@ -30,13 +32,26 @@ public class CarController : MonoBehaviour
 
         foreach (WheelControl wheel in wheels)
         {
+            Debug.LogError(wheel.name + " Brake: " + wheel.wheelCollider.brakeTorque);
+            Debug.LogError(wheel.name + " Motor: " + wheel.wheelCollider.motorTorque);
+            Debug.ClearDeveloperConsole();
+            if (isSpaceDown && wheel.hasParkingBrake)
+            {
+                wheel.wheelCollider.brakeTorque = brakeTorque;
+                continue;
+            }
+            if (!isSpaceDown && wheel.hasParkingBrake)
+            {
+                wheel.wheelCollider.brakeTorque = 0;
+            }
             if (wheel.steerable) 
                 wheel.wheelCollider.steerAngle = currentMaxTurnAngle * hInput;
             if (isAccelerating)
             {
                 if (wheel.motorized)
                     wheel.wheelCollider.motorTorque = currentMotorTorque * vInput;
-                wheel.wheelCollider.brakeTorque = 0;
+                if (!isSpaceDown || !wheel.hasParkingBrake)
+                    wheel.wheelCollider.brakeTorque = 0;
             }
             else
             {
