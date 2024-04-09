@@ -32,9 +32,6 @@ public class CarController : MonoBehaviour
 
         foreach (WheelControl wheel in wheels)
         {
-            Debug.LogError(wheel.name + " Brake: " + wheel.wheelCollider.brakeTorque);
-            Debug.LogError(wheel.name + " Motor: " + wheel.wheelCollider.motorTorque);
-            Debug.ClearDeveloperConsole();
             if (isSpaceDown && wheel.hasParkingBrake)
             {
                 wheel.wheelCollider.brakeTorque = brakeTorque;
