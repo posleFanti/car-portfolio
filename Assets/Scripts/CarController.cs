@@ -29,6 +29,9 @@ public class CarController : MonoBehaviour
         float currentMaxTurnAngle = Mathf.Lerp(maxTurnAngle, maxTurnAngleOnHighSpeed, speedFactor);
         bool isAccelerating = Mathf.Sign(vInput) == Mathf.Sign(forwardSpeed);
 
+        if (Input.GetKey(KeyCode.R))
+            CarReset();
+
         foreach (WheelControl wheel in wheels)
         {
             if (isSpaceDown && wheel.hasParkingBrake)
@@ -55,5 +58,14 @@ public class CarController : MonoBehaviour
                 wheel.wheelCollider.motorTorque = 0;
             }
         }
+    }
+
+    private void CarReset()
+    {
+        Transform carTransform = transform;
+        carTransform.position = new Vector3(0, 1, 0);
+        carTransform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+        _rb.velocity = Vector3.zero;
+        _rb.angularVelocity = Vector3.zero;
     }
 }
